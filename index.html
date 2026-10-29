@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Weather App</h1>
+
+    <form id="search-form" class="search">
+      <label for="city-input" class="sr-only">City name</label>
+      <input id="city-input" type="text" placeholder="Enter a city, e.g. Chennai" autocomplete="off" required>
+      <button type="submit">Search</button>
+      <button type="button" id="unit-toggle" title="Switch between °C and °F">°C</button>
+    </form>
+
+    <p id="message" class="message" role="status"></p>
+
+    <section id="current" class="current hidden" aria-live="polite">
+      <h2 id="place"></h2>
+      <div class="now">
+        <span id="icon" class="icon" aria-hidden="true"></span>
+        <span id="temp" class="temp"></span>
+      </div>
+      <p id="description" class="description"></p>
+      <ul class="details">
+        <li>Feels like <strong id="feels"></strong></li>
+        <li>Humidity <strong id="humidity"></strong></li>
+        <li>Wind <strong id="wind"></strong></li>
+      </ul>
+    </section>
+
+    <section id="forecast-section" class="hidden">
+      <h2>5-day forecast</h2>
+      <ul id="forecast" class="forecast"></ul>
+    </section>
+
+    <p class="credit">Weather data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
